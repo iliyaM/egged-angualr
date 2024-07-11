@@ -1,0 +1,24 @@
+@import "../../styles";
+
+:host {
+  height: 100%;
+  width: 100%;
+}
+
+section.exchange-rate {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding: 1em calc((100% - 1200px) / 2);
+
+  h3 {
+    margin: 0;
+  }
+
+  div.container p {
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+}

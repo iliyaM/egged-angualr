@@ -1,0 +1,420 @@
+@import "../../styles";
+
+:host {
+  height: 100%;
+  width: 100%;
+}
+
+section.responsive-design {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding: 1em calc((100% - 1188px) / 2);
+  direction: rtl;
+  background-color: $light-gray;
+
+  div.progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    border-left: 1px solid $primary-color;
+    border-right: 1px solid $primary-color;
+    box-sizing: border-box;
+    padding: 0.5em;
+
+    div.progress-container {
+      display: flex;
+      align-items: center;
+
+      div.checkmark {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        box-sizing: border-box;
+        padding: 2px 7px;
+        margin-left: 0.5em;
+        border-radius: 100%;
+        border: 1px solid $primary-color;
+        color: $primary-color;
+
+        font-size: 1em;
+      }
+
+      p {
+        margin: 0;
+        font-weight: bold;
+      }
+
+      &.complete div.checkmark {
+        background: $gradient;
+        color: $text-color-light;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    div.divider {
+      width: 10%;
+      height: 1px;
+      background-color: $text-color-dark;
+      margin: 0 1em;
+      padding: 0;
+    }
+  }
+
+  div.payment-and-time {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    width: 100%;
+
+    box-sizing: border-box;
+    padding: 0.5em 0;
+
+
+    p.payment-title {
+      color: $primary-color;
+      font-weight: bold;
+      font-size: 1.3em;
+      margin: 0;
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    div.clock {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      justify-self: flex-end;
+
+      box-sizing: border-box;
+      padding: 0.5em;
+
+      background-color: #ffffea;
+      border-radius: 3px;
+      border: 1px solid $border-color;
+
+      div.clock-icon {
+        padding-left: 0.5em;
+      }
+
+      p {
+        font-weight: bold;
+        margin: 0;
+      }
+    }
+  }
+
+  div.transport-details-back,
+  div.transport-details {
+    display: flex;
+    align-items: center;
+    background-color: $text-color-light;
+    width: 100%;
+
+    box-sizing: border-box;
+    padding: 1em;
+
+    border: 1px solid $border-color;
+    border-bottom: none;
+
+    div.seats {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+
+      div.container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 1em 0;
+        border-bottom: 1px solid $border-color;
+
+        &:last-of-type {
+          border: none;
+        }
+
+        div.date,
+        div.drive {
+          display: flex;
+          align-items: center;
+
+          p {
+            margin: 0;
+            color: black;
+            padding-left: 0.5em;
+
+            &.title {
+              color: $primary-color;
+              font-weight: bold;
+              font-size: 1.1em;
+            }
+          }
+        }
+
+        div.date p {
+          color: $primary-color;
+          margin: 0;
+          font-weight: bold;
+          font-size: 1.1em;
+        }
+
+        div.date p.time {
+          padding: 0.2em;
+          background-color: #ffffea;
+          border-radius: 3px;
+          color: $primary-color;
+          margin: 0;
+          font-weight: bold;
+        }
+
+        p.line,
+        div.sets {
+          background-color: $light-gray;
+          border-radius: 3px;
+          border: 1px solid $border-color;
+          color: $text-color-dark;
+
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+
+          box-sizing: border-box;
+          padding: 0.2em;
+
+          p {
+            margin: 0;
+          }
+
+          p.icon {
+            padding-left: 0.5em;
+          }
+        }
+
+        div.drive p.line {
+          background-color: $primary-color;
+          color: $text-color-light;
+          padding: 0.2em 0.5em;
+        }
+      }
+    }
+
+    div.destination {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $text-color-light;
+      width: 50%;
+
+      box-sizing: border-box;
+      padding: 1em;
+
+      div.arrow-icon {
+        color: $text-color-light;
+        padding: 3px 4px;
+        background-color: $primary-color;
+        border-radius: 100%;
+        font-size: 0.8em;
+      }
+
+      div.destination-details {
+        display: flex;
+        flex-direction: column;
+
+        &:last-of-type {
+          text-align: left;
+        }
+
+        p {
+          margin: 0;
+          padding-bottom: 0.5em;
+
+          &.starting-point {
+            color: $border-color;
+          }
+
+          &.station {
+            color: $primary-color;
+            font-size: 1.1em;
+            font-weight: bold;
+          }
+
+          &.location {
+            color: $text-color-dark;
+          }
+        }
+      }
+    }
+  }
+
+  div.transport-details-back {
+    display: none;
+  }
+
+  div.summary {
+    display: flex;
+    align-items: center;
+    background: $gradient;
+    justify-content: space-between;
+    width: 100%;
+
+    box-sizing: border-box;
+    padding: 1em;
+
+    div.details {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 50%;
+
+      div.container {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        width: 100%;
+
+        div.spacer {
+          border-bottom: 1px dotted $text-color-light;
+          width: 100%;
+        }
+
+        p {
+          margin: 0;
+          color: $text-color-light;
+          padding: 0.5em;
+          min-width: fit-content;
+        }
+      }
+    }
+
+    div.divider {
+      background-color: $text-color-light;
+    }
+
+    div.sum {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 50%;
+
+      div.divider {
+        background-color: $text-color-light;
+      }
+
+      p.final-price,
+      p.price {
+        margin: 0;
+        color: $text-color-light;
+      }
+
+      p.final-price b {
+        font-size: 1.5em;
+        padding-right: 0.5em;
+      }
+
+    }
+  }
+
+}
+
+div.divider {
+  width: 1.5px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 1em 0;
+  background-color: $primary-color;
+  margin: 0 1em;
+}
+
+
+@media only screen and (max-width: 411px + 200px) { // ADDING 200 BECAUSE OF SIDEBAR
+
+  section.responsive-design {
+    box-sizing: border-box;
+    padding: 1em;
+
+
+    div.progress-bar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+
+      div.divider {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    div.progress-container {
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+
+      p {
+        font-size: 0.5em;
+      }
+    }
+
+    div.progress-bar div.progress-container div.checkmark {
+      padding: 1px 3px;
+      margin: 0;
+      font-size: 0.5em;
+    }
+
+    div.transport-details-back {
+      display: flex;
+    }
+
+    div.transport-details-back,
+    div.transport-details {
+      flex-direction: column;
+      padding-bottom: 0;
+      border-bottom: 2px solid #08a684;
+
+      div.seats,
+      div.destination {
+        width: 100%;
+
+        div.container:last-of-type {
+          border-bottom: 1px solid $border-color;
+        }
+      }
+
+      div.divider {
+        display: none;
+      }
+    }
+
+    div.summary {
+      flex-direction: column;
+
+      div.sum,
+      div.details {
+        width: 100%;
+      }
+
+      div.divider {
+        display: none;
+      }
+
+      div.sum p.final-price {
+        color: transparent;
+        b {
+          color: $text-color-light;
+        }
+      }
+    }
+  }
+
+}

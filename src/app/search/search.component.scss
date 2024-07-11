@@ -1,0 +1,27 @@
+@import "../../styles";
+
+:host {
+  height: 100%;
+  width: 100%;
+}
+
+section.search {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+
+  padding: 1em calc((100% - 1200px) / 2);
+
+  input {
+    box-sizing: border-box;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: 1px solid $text-color-dark;
+    width: 250px;
+    margin-bottom: 1em;
+  }
+
+
+}

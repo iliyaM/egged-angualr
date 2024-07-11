@@ -1,7 +1,0 @@
-<ul class="todos" *ngIf="todosList$ | async as todos; else loading">
-  <li class="todo-item" *ngFor="let item of todos" [ngClass]="{'completed': item.completed }"> {{ item.title }}</li>
-</ul>
-
-<ng-template #loading>
-  <p>Loading...</p>
-</ng-template>
